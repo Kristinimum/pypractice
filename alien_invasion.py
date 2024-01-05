@@ -17,7 +17,7 @@ class AlienInvasion:
         while True:                             # this is an event loop that listens for events to perform tasks.
             # Watch for keyboard and mouse events.
             for event in pygame.event.get():  # returns list of events to cause for loop to run.
-                if event.type ==pygame.QUIT:  # click window close button game will quit.
+                if event.type == pygame.QUIT:  # click window close button game will quit.
                     sys.exit()
                     
                 # Make the most recently drawn screen visible.
