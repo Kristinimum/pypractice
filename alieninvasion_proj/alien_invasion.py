@@ -14,8 +14,12 @@ class AlienInvasion:
         pygame.init()  # this function initializes background settings for pygame.
         self.clock = pygame.time.Clock()
         self.settings = Settings()
+<<<<<<< HEAD
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+=======
+        
+>>>>>>> parent of 244da90 (full screen mode not work for this screen)
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)) # creates display window assigned to self.screen
         pygame.display.set_caption("Alien Invasion")
