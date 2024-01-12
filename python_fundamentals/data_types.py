@@ -14,11 +14,12 @@ def main():
 
     # Boolean (bool)
     instances_running = True
-    print(f"Are my instances running? {instances_running}.")
-    print(f"My variable is of type: {type(instances_running)}.")
+    #print(f"Are my instances running? {instances_running}.")
+    #print(f"My variable is of type: {type(instances_running)}.")
 
     # Floating point number (float)
-
+    instances_cost_per_hour = 0.25 # USD 
+    print(f"The price of running them per instance per hour is {instances_cost_per_hour} USD")
 
 
 if __name__ == "__main__":
