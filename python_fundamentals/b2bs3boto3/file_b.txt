@@ -1,0 +1,5 @@
+We're using CRUD operations to showcase boto3.
+C - Create
+R - Read
+U - Update
+D - Delete
