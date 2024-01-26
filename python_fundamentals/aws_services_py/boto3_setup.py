@@ -1,4 +1,4 @@
-import python_fundamentals.aws_services_py.boto3_setup as boto3_setup
+import boto3
 
 # This creates our resource and assigns it to the s3 variable.
 s3 = boto3.resource('s3')
@@ -9,3 +9,4 @@ for bucket in s3.buckets.all():
 
 #bucket.name calls on the name of the bucket. 
 #run in terminal with: python boto3_setup.py
+
