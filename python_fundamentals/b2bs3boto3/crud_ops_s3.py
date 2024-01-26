@@ -17,6 +17,7 @@ else:
 file_a = 'file_a.txt'
 file_b = 'file_b.txt'
 # UPLOAD 'file_1' to the new bucket 
+#This command below worked but one from class did not.
 #s3.Bucket(bucket_name).put_object(Filename=file_a, Key=file_a)
 #then check is s3 to see if file is in our bucket
 s3.Bucket(bucket_name).upload_file(Filename=file_a, Key=file_a)
