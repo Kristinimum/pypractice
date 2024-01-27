@@ -42,3 +42,19 @@ else:
     print(f"Internet Gateway'{ig_name}' with ID '{ig_id}'has been created.")
 
 # Create a route table and a public route to the internet
+rt_response = ec2.create_route_table(VpcId=vpc_id)
+rt_id = rt_response['RouteTable']['RouteTableId']
+#then create route to the internet. will have 3 parameters
+route = ec2.create_route(
+    RouteTableId=rt_id,
+    DestinationCidrBlock='0.0.0.0/0',
+    GatewayId=ig_id
+    )
+print(f"Route Table with ID'{rt_id}' has been created.")
+
+#create 3 subnets. need to pass vpc id, CidrBlock, AZ
+subnet_1 = ec2.create_subnet(VpcId=vpc_id, CidrBlock='10.0.1.0/24', AvailabilityZone='us-east-1a')
+subnet_2 = ec2.create_subnet(VpcId=vpc_id, CidrBlock='10.0.2.0/24', AvailabilityZone='us-east-1b')
+subnet_3 = ec2.create_subnet(VpcId=vpc_id, CidrBlock='10.0.3.0/24', AvailabilityZone='us-east-1c')
+
+print(f"subnet_1 ID = '{subnet_1['Subnet']['SubnetId']}', subnet_2 ID = '{subnet_2['Subnet']['SubnetId']}', subnet_3 ID = '{subnet_3['Subnet']['SubnetId']}', ")
