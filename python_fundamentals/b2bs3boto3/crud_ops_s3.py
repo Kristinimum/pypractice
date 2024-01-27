@@ -26,15 +26,15 @@ obj = s3.Object(bucket_name, file_a)
 body = obj.get()['Body'].read()
 print(body)
 
-# UPDATE 'file_1' in the bucket with new content from 'file_2'
-#s3.Object(bucket_name, file_1).put(Body=open(file_2, 'rb'))
-#obj = s3.object(bucket_name, file_1)
-#body = obj.get()['Body'].read()
-#print(body)
+# UPDATE 'file_a' in the bucket with new content from 'file_b'
+s3.Object(bucket_name, file_a).put(Body=open(file_b, 'rb'))
+obj = s3.Object(bucket_name, file_a)
+body = obj.get()['Body'].read()
+print(body)
 
 # DELETE the file from the bucket remove # when ready to run these last 3 commands.
-#s3.Object(bucket_name, file_1).delete()
+s3.Object(bucket_name, file_a).delete()
 
 # DELETE the bucket (the bucket should be empty.)
-#bucket = s3.Bucket(bucket_name)
-#bucket.delete()
+bucket = s3.Bucket(bucket_name)
+bucket.delete()
