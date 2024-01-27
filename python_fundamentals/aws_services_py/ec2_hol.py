@@ -52,7 +52,7 @@ if not instance_exists:   # then we indented everything else below by 4 spaces.
 # Stop an instance. stop, start, terminate are all functions.
 #ec2.Instance(instance_id).stop()
 #print(f"Instance '{instance_name}--{instance_id}' has been stopped.")
-# Start an instance
+# Start an instance. the start() is the start function.
 #ec2.Instance(instance_id).start()
 #print(f"Instance '{instance_name}--{instance_id}' has been started.")
 #Terminate an instance
