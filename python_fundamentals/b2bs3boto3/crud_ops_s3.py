@@ -16,14 +16,25 @@ else:
 #CREATE files and make variables for them. 
 file_a = 'file_a.txt'
 file_b = 'file_b.txt'
-# UPLOAD 'file_1' to the new bucket 
-#This command below worked but one from class did not.
-#s3.Bucket(bucket_name).put_object(Filename=file_a, Key=file_a)
+# UPLOAD 'file_a' to the new bucket 
 #then check is s3 to see if file is in our bucket
 s3.Bucket(bucket_name).upload_file(Filename=file_a, Key=file_a)
 print('Yas, file uploaded')
 
 # READ and print the file from the bucket
-#obj = s3.Object(bucket_name, file_a)
+obj = s3.Object(bucket_name, file_a)
+body = obj.get()['Body'].read()
+print(body)
+
+# UPDATE 'file_1' in the bucket with new content from 'file_2'
+#s3.Object(bucket_name, file_1).put(Body=open(file_2, 'rb'))
+#obj = s3.object(bucket_name, file_1)
 #body = obj.get()['Body'].read()
 #print(body)
+
+# DELETE the file from the bucket remove # when ready to run these last 3 commands.
+#s3.Object(bucket_name, file_1).delete()
+
+# DELETE the bucket (the bucket should be empty.)
+#bucket = s3.Bucket(bucket_name)
+#bucket.delete()
