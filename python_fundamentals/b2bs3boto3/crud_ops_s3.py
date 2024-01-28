@@ -36,5 +36,5 @@ print(body)
 s3.Object(bucket_name, file_a).delete()
 
 # DELETE the bucket (the bucket should be empty.)
-bucket = s3.Bucket(bucket_name)
-bucket.delete()
+#bucket = s3.Bucket(bucket_name)
+#bucket.delete()
